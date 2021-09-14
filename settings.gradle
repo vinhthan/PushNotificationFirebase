@@ -1,0 +1,2 @@
+rootProject.name = "PushNotificationFirebase"
+include ':app'
