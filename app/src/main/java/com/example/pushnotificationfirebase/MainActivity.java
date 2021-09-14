@@ -29,10 +29,8 @@ public class MainActivity extends AppCompatActivity {
                             Log.w("123123", "Fetching FCM registration token failed", task.getException());
                             return;
                         }
-
                         // Get new FCM registration token
                         String token = task.getResult();
-
                         // Log and toast
                         Log.d("123123", "Token: "+ token);
                     }
