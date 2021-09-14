@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         getToken();
 
+        setTitleToolbar();
+
     }
     private void getToken() {
         FirebaseMessaging.getInstance().getToken()
@@ -35,5 +37,11 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("123123", "Token: "+ token);
                     }
                 });
+    }
+
+    private void setTitleToolbar() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Main Activity");
+        }
     }
 }
