@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView tvUserInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         getToken();
 
         setTitleToolbar();
+
+        getDataIntent();
 
     }
     private void getToken() {
@@ -43,5 +47,11 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Main Activity");
         }
+    }
+
+    private void getDataIntent() {
+        String phone = getIntent().getStringExtra("phone_number");
+        tvUserInfo = findViewById(R.id.tv_user_info);
+        tvUserInfo.setText(phone);
     }
 }
